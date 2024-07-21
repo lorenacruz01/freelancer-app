@@ -33,7 +33,7 @@ namespace FreeLancer.Core.Entities
             FreelancerId = freelancerId;
             TotalCost = totalCost;
             CreatedAt = DateTime.Now;
-            Comments = new List<Comment>();
+            Comments = new List<ProjectComment>();
 
         }
     }
