@@ -36,5 +36,36 @@ namespace FreeLancer.Core.Entities
             Comments = new List<ProjectComment>();
 
         }
+
+        public void Cancel()
+        {
+            if(Status == ProjectStatus.InProgress || Status == ProjectStatus.Created)
+                Status = ProjectStatus.Canceled;
+        }
+
+        public void Finish()
+        {
+            if (Status == ProjectStatus.InProgress)
+            {
+                Status = ProjectStatus.Finished;
+                FinishedAt = DateTime.Now;
+            }
+        }
+
+        public void Start()
+        {
+            if (Status == ProjectStatus.Created)
+            {
+                Status = ProjectStatus.InProgress;
+                StartedAt = DateTime.Now;
+            }
+        }
+
+        public void Update(string title, string description, decimal? totalCost)
+        {
+            Title = title;
+            Description = description;
+            TotalCost = totalCost;
+        }
     }
 }
