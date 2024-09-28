@@ -52,7 +52,7 @@ namespace FreeLancer.Application.Services.Implementations
                 project.Start();
         }
 
-        public List<ProjectViewModel> GetAll(string query)
+        public List<ProjectViewModel> GetAll()
         {
             IEnumerable<Project> projects = _dbContext.Projects.Where(x => x.Status != Core.Enums.ProjectStatus.Canceled);
             List<ProjectViewModel> projectViewModels = projects.Select(x => new ProjectViewModel(x.Id, x.Title, x.CreatedAt)).ToList();

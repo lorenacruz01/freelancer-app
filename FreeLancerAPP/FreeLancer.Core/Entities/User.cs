@@ -29,5 +29,12 @@ namespace FreeLancer.Core.Entities
             FreelancerProjects = new List<Project>();
 
         }
+
+        public void Update(string name, string email, bool active)
+        {
+            Name = name;
+            Email = email;
+            Active = Active;
+        }
     }
 }
