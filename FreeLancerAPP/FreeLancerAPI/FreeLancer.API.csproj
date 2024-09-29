@@ -12,7 +12,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FreeLancer.Application\FreeLancer.Application.csproj" />
     <ProjectReference Include="..\FreeLancer.Core\FreeLancer.Core.csproj" />
+    <ProjectReference Include="..\FreeLancer.Infraestructure\FreeLancer.Infraestructure.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,3 +1,6 @@
+using FreeLancer.Application.Services.Implementations;
+using FreeLancer.Application.Services.Interfaces;
+using FreeLancer.Infraestructure.Persistence;
 using FreeLancerAPI.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +14,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.Configure<OpeningTimeOption>(configuration.GetSection("OpeningTime"));
+
+builder.Services.AddSingleton<FreeLancerDbContext>();
+builder.Services.AddScoped<IProjectService, ProjectService>();
 
 var app = builder.Build();
 

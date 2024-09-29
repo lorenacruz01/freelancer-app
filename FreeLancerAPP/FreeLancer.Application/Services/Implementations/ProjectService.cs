@@ -63,6 +63,10 @@ namespace FreeLancer.Application.Services.Implementations
         public ProjectDetailsViewModel GetById(int id)
         {
             Project? project = _dbContext.Projects.SingleOrDefault(x => x.Id ==id);
+
+            if (project == null)
+                return null;
+
             ProjectDetailsViewModel projectDetailsViewModel = new ProjectDetailsViewModel(
                 project.Id,
                 project.Title,
